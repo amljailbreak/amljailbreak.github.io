@@ -3,155 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>aml Addon Store</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>aml - Home</title>
     <style>
-        body {
-            font-family: 'Fredoka', sans-serif;
+        /* Reset */
+        * {
             margin: 0;
             padding: 0;
-            background-color: #131314;
-            color: #fff;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #131314, #1c1c1e);
+            color: white;
             overflow-x: hidden;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
         }
         header {
-            background-color: #202124;
-            padding: 1rem 2rem; /* Adjusted padding for a more compact header */
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background: rgba(0, 0, 0, 0.5);
             position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        header h1 {
+            font-size: 1.8rem;
+            color: #00ffa1;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #00ffa1;
+        }
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #1c1c1e, #202022);
+            position: relative;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 1000;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 3s infinite;
         }
-        header h1 {
-            margin: 0;
-            color: #42A5F5;
-            text-transform: lowercase;
-            font-size: 2.2rem; /* Adjusted font size for header */
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.9;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.5;
+            }
         }
-        header p {
-            margin-top: 0.5rem;
-            font-size: 1.1rem;
-            color: #ccc;
+        .hero h2 {
+            font-size: 3rem;
+            color: #00ffa1;
         }
-        .addon-list {
-            display: flex;
-            flex-wrap: wrap; /* Cards wrap to next line when necessary */
-            justify-content: center;
-            gap: 1.5rem;
-            padding: 2rem;
-            overflow-y: auto;
-            flex-grow: 1;
-            height: 100%; /* Allow scrolling */
+        .hero p {
+            font-size: 1.2rem;
+            margin-top: 15px;
+            color: #cfcfcf;
         }
-        .addon-card {
-            background-color: #1e1e1e;
-            border: 1px solid #333;
-            border-radius: 12px;
-            padding: 1.5rem;
+        .cta-btn {
+            margin-top: 30px;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            color: #131314;
+            background: #00ffa1;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .cta-btn:hover {
+            transform: scale(1.1);
+        }
+        .features {
+            padding: 50px 10%;
             text-align: center;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-            width: 30%; /* Adjusted card width */
-            max-width: 300px; /* Max width for cards */
-            min-width: 250px; /* Min width to keep consistency */
         }
-        .addon-card h2 {
-            color: #FFCA28;
-            font-size: 1.3rem; /* Adjusted card title font size */
-            margin-bottom: 1rem;
+        .features h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
         }
-        .addon-card p {
-            margin: 0.5rem 0;
-            color: #bbb;
-            font-size: 0.95rem; /* Slightly smaller description text */
-        }
-        .addon-card a {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            margin-top: 1rem;
-            background-color: #42A5F5;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: background-color 0.3s;
-            text-transform: uppercase;
+        .features-container {
             display: flex;
-            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
             justify-content: center;
         }
-        .addon-card a:hover {
-            background-color: #1E88E5;
+        .feature {
+            background: #1c1c1e;
+            padding: 20px;
+            border-radius: 15px;
+            width: 300px;
+            transition: transform 0.3s ease;
         }
-        .download-icon {
-            margin-right: 8px; /* Add space between icon and text */
-            fill: #e8eaed;
-            height: 16px;
-            width: 16px;
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .feature p {
+            font-size: 1rem;
+            color: #cfcfcf;
         }
         footer {
+            background: #101010;
+            color: #cfcfcf;
+            padding: 20px;
             text-align: center;
-            padding: 1.5rem;
-            background-color: #202124;
-            color: #888;
-            margin-top: auto;
-        }
-        footer a {
-            color: #42A5F5;
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>aml addon store</h1>
-        <p>Enhance your aml experience with custom addons!</p>
+        <h1>aml</h1>
+        <nav>
+            <a href="#features">Features</a>
+            <a href="#download">Download</a>
+            <a href="#support">Support</a>
+        </nav>
     </header>
-    <main>
-        <div class="addon-list">
-            <!-- Addon 1 -->
-            <div class="addon-card">
-                <h2>Addon Name 1</h2>
-                <p>Short description of Addon 1.</p>
-                <a href="/addons/addon1" target="_blank">
-                    <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
-                        <path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/>
-                    </svg>
-                    Install
-                </a>
+
+    <section class="hero">
+        <div>
+            <h2>Revolutionizing Your Device</h2>
+            <p>Experience full control and customization with aml.</p>
+            <button class="cta-btn">Get Started</button>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <h2>Features</h2>
+        <div class="features-container">
+            <div class="feature">
+                <h3>Custom Firmware</h3>
+                <p>Replace your device firmware with ease and keep your warranty.</p>
             </div>
-            <!-- Addon 2 -->
-            <div class="addon-card">
-                <h2>Addon Name 2</h2>
-                <p>Short description of Addon 2.</p>
-                <a href="/addons/addon2" target="_blank">
-                    <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="http://www.w3.org/2000/svg" width="24px" fill="#e8eaed">
-                        <path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/>
-                    </svg>
-                    Install
-                </a>
+            <div class="feature">
+                <h3>Linux Console</h3>
+                <p>Install packages, test apps, and more using the built-in Linux console.</p>
             </div>
-            <!-- Addon 3 -->
-            <div class="addon-card">
-                <h2>Addon Name 3</h2>
-                <p>Short description of Addon 3.</p>
-                <a href="/addons/addon3" target="_blank">
-                    <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="http://www.w3.org/2000/svg" width="24px" fill="#e8eaed">
-                        <path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/>
-                    </svg>
-                    Install
-                </a>
+            <div class="feature">
+                <h3>Cross-Platform</h3>
+                <p>Compatible with all iOS devices and major platforms.</p>
             </div>
         </div>
-    </main>
+    </section>
+
     <footer>
-        <p>&copy; 2025 aml. All rights reserved. Built for jailbreak enthusiasts. <a href="https://github.com/amljailbreak" target="_blank">GitHub</a></p>
+        <p>&copy; 2025 aml. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
