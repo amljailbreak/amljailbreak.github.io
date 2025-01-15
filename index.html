@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>aml - Home</title>
+    <!-- Link to Google Fonts for Fredoka One -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* Reset */
         * {
@@ -12,8 +14,9 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #131314, #1c1c1e);
+            font-family: 'Fredoka', sans-serif;
+            background: url('/aml.PNG') no-repeat center center fixed;
+            background-size: cover;
             color: white;
             overflow-x: hidden;
         }
@@ -22,14 +25,14 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 10%;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(255, 0, 0, 0.7);
             position: sticky;
             top: 0;
             z-index: 10;
         }
         header h1 {
-            font-size: 1.8rem;
-            color: #00ffa1;
+            font-size: 2rem;
+            color: white;
         }
         nav a {
             color: white;
@@ -39,7 +42,7 @@
             transition: color 0.3s ease;
         }
         nav a:hover {
-            color: #00ffa1;
+            color: #ffcccb;
         }
         .hero {
             height: 100vh;
@@ -47,7 +50,6 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(135deg, #1c1c1e, #202022);
             position: relative;
         }
         .hero::after {
@@ -57,7 +59,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            background: rgba(255, 0, 0, 0.5);
             animation: pulse 3s infinite;
         }
         @keyframes pulse {
@@ -72,19 +74,19 @@
         }
         .hero h2 {
             font-size: 3rem;
-            color: #00ffa1;
+            color: #ffcccb;
         }
         .hero p {
             font-size: 1.2rem;
             margin-top: 15px;
-            color: #cfcfcf;
+            color: #f0f0f0;
         }
         .cta-btn {
             margin-top: 30px;
             padding: 15px 30px;
             font-size: 1.2rem;
-            color: #131314;
-            background: #00ffa1;
+            color: #ff0000;
+            background: #ffcccb;
             border: none;
             border-radius: 25px;
             cursor: pointer;
@@ -96,10 +98,12 @@
         .features {
             padding: 50px 10%;
             text-align: center;
+            background: rgba(255, 0, 0, 0.7);
         }
         .features h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
+            color: white;
         }
         .features-container {
             display: flex;
@@ -108,7 +112,7 @@
             justify-content: center;
         }
         .feature {
-            background: #1c1c1e;
+            background: #ffcccb;
             padding: 20px;
             border-radius: 15px;
             width: 300px;
@@ -120,14 +124,15 @@
         .feature h3 {
             font-size: 1.5rem;
             margin-bottom: 10px;
+            color: #ff0000;
         }
         .feature p {
             font-size: 1rem;
-            color: #cfcfcf;
+            color: #f0f0f0;
         }
         footer {
-            background: #101010;
-            color: #cfcfcf;
+            background: #ff0000;
+            color: #f0f0f0;
             padding: 20px;
             text-align: center;
         }
