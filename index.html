@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>aml - Home</title>
+    <title>aml - Modern Homepage</title>
     <!-- Link to Google Fonts for Fredoka One -->
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -18,31 +18,48 @@
             background: url('/aml.PNG') no-repeat center center fixed;
             background-size: cover;
             color: white;
-            overflow-x: hidden;
-        }
-        header {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 10%;
-            background: rgba(255, 0, 0, 0.7);
-            position: sticky;
+            min-height: 100vh;
+        }
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            position: fixed;
+            height: 100%;
             top: 0;
-            z-index: 10;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
-        header h1 {
+        .sidebar h1 {
             font-size: 2rem;
-            color: white;
+            color: red;
+            margin-bottom: 20px;
         }
-        nav a {
+        .sidebar nav a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
+            margin: 10px 0;
             font-size: 1.1rem;
             transition: color 0.3s ease;
         }
-        nav a:hover {
+        .sidebar nav a:hover {
             color: #ffcccb;
+        }
+        .sidebar footer {
+            font-size: 0.9rem;
+            color: #f0f0f0;
+        }
+        /* Main Content */
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
         }
         .hero {
             height: 100vh;
@@ -130,52 +147,47 @@
             font-size: 1rem;
             color: #f0f0f0;
         }
-        footer {
-            background: #ff0000;
-            color: #f0f0f0;
-            padding: 20px;
-            text-align: center;
-        }
     </style>
 </head>
 <body>
-    <header>
+    <div class="sidebar">
         <h1>aml</h1>
         <nav>
             <a href="#features">Features</a>
             <a href="#download">Download</a>
             <a href="#support">Support</a>
         </nav>
-    </header>
+        <footer>
+            <p>&copy; 2025 aml. All Rights Reserved.</p>
+        </footer>
+    </div>
 
-    <section class="hero">
-        <div>
-            <h2>Revolutionizing Your Device</h2>
-            <p>Experience full control and customization with aml.</p>
-            <button class="cta-btn">Get Started</button>
-        </div>
-    </section>
+    <div class="main-content">
+        <section class="hero">
+            <div>
+                <h2>Revolutionizing Your Device</h2>
+                <p>Experience full control and customization with aml.</p>
+                <button class="cta-btn">Get Started</button>
+            </div>
+        </section>
 
-    <section class="features" id="features">
-        <h2>Features</h2>
-        <div class="features-container">
-            <div class="feature">
-                <h3>Custom Firmware</h3>
-                <p>Replace your device firmware with ease and keep your warranty.</p>
+        <section class="features" id="features">
+            <h2>Features</h2>
+            <div class="features-container">
+                <div class="feature">
+                    <h3>Custom Firmware</h3>
+                    <p>Replace your device firmware with ease and keep your warranty.</p>
+                </div>
+                <div class="feature">
+                    <h3>Linux Console</h3>
+                    <p>Install packages, test apps, and more using the built-in Linux console.</p>
+                </div>
+                <div class="feature">
+                    <h3>Cross-Platform</h3>
+                    <p>Compatible with all iOS devices and major platforms.</p>
+                </div>
             </div>
-            <div class="feature">
-                <h3>Linux Console</h3>
-                <p>Install packages, test apps, and more using the built-in Linux console.</p>
-            </div>
-            <div class="feature">
-                <h3>Cross-Platform</h3>
-                <p>Compatible with all iOS devices and major platforms.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 aml. All Rights Reserved.</p>
-    </footer>
+        </section>
+    </div>
 </body>
 </html>
