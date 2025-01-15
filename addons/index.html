@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aml Addon Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Fredoka', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #131314;
+            color: #fff;
+            overflow-x: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background-color: #202124;
+            padding: 1rem 2rem; /* Adjusted padding for a more compact header */
+            text-align: center;
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        header h1 {
+            margin: 0;
+            color: #42A5F5;
+            text-transform: lowercase;
+            font-size: 2.2rem; /* Adjusted font size for header */
+        }
+        header p {
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+        .addon-list {
+            display: flex;
+            flex-wrap: wrap; /* Cards wrap to next line when necessary */
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 2rem;
+            overflow-y: auto;
+            flex-grow: 1;
+            height: 100%; /* Allow scrolling */
+        }
+        .addon-card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            width: 30%; /* Adjusted card width */
+            max-width: 300px; /* Max width for cards */
+            min-width: 250px; /* Min width to keep consistency */
+        }
+        .addon-card h2 {
+            color: #FFCA28;
+            font-size: 1.3rem; /* Adjusted card title font size */
+            margin-bottom: 1rem;
+        }
+        .addon-card p {
+            margin: 0.5rem 0;
+            color: #bbb;
+            font-size: 0.95rem; /* Slightly smaller description text */
+        }
+        .addon-card a {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            margin-top: 1rem;
+            background-color: #42A5F5;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.3s;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .addon-card a:hover {
+            background-color: #1E88E5;
+        }
+        .download-icon {
+            margin-right: 8px; /* Add space between icon and text */
+            fill: #e8eaed;
+            height: 16px;
+            width: 16px;
+        }
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #202124;
+            color: #888;
+            margin-top: auto;
+        }
+        footer a {
+            color: #42A5F5;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>aml addon store</h1>
+        <p>Enhance your aml experience with custom addons!</p>
+    </header>
+    <main>
+        <div class="addon-list">
+            <!-- Addon 1 -->
+            <div class="addon-card">
+                <h2>Addon Name 1</h2>
+                <p>Short description of Addon 1.</p>
+                <a href="/addons/addon1" target="_blank">
+                    <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                        <path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/>
+                    </svg>
+                    Install
+                </a>
+            </div>
+            <!-- Addon 2 -->
+            <div class="addon-card">
+                <h2>Addon Name 2</h2>
+                <p>Short description of Addon 2.</p>
+                <a href="/addons/addon2" target="_blank">
+                    <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="http://www.w3.org/2000/svg" width="24px" fill="#e8eaed">
+                        <path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/>
+                    </svg>
+                    Install
+                </a>
+            </div>
+            <!-- Addon 3 -->
+            <div class="addon-card">
+                <h2>Addon Name 3</h2>
+                <p>Short description of Addon 3.</p>
+                <a href="/addons/addon3" target="_blank">
+                    <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="http://www.w3.org/2000/svg" width="24px" fill="#e8eaed">
+                        <path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/>
+                    </svg>
+                    Install
+                </a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 aml. All rights reserved. Built for jailbreak enthusiasts. <a href="https://github.com/amljailbreak" target="_blank">GitHub</a></p>
+    </footer>
+</body>
+</html>
