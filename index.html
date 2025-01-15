@@ -15,8 +15,7 @@
         }
         body {
             font-family: 'Fredoka', sans-serif;
-            background: url('/aml.PNG') no-repeat center center fixed;
-            background-size: cover;
+            background-color: #131314; /* Dark background */
             color: white;
             display: flex;
             min-height: 100vh;
@@ -24,7 +23,7 @@
         /* Sidebar */
         .sidebar {
             width: 250px;
-            background: rgba(0, 0, 0, 0.7);
+            background: #1e1e1e; /* Dark sidebar background */
             padding: 20px;
             position: fixed;
             height: 100%;
@@ -36,7 +35,7 @@
         }
         .sidebar h1 {
             font-size: 2rem;
-            color: red;
+            color: red; /* Red font color for header */
             margin-bottom: 20px;
         }
         .sidebar nav a {
@@ -58,8 +57,6 @@
             margin-left: 250px;
             padding: 20px;
             width: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
         }
         .hero {
             height: 100vh;
@@ -67,27 +64,6 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            position: relative;
-        }
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 0, 0, 0.5);
-            animation: pulse 3s infinite;
-        }
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-                opacity: 0.9;
-            }
-            50% {
-                transform: scale(1.2);
-                opacity: 0.5;
-            }
         }
         .hero h2 {
             font-size: 3rem;
@@ -115,7 +91,7 @@
         .features {
             padding: 50px 10%;
             text-align: center;
-            background: rgba(255, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.7); /* Dark background for features */
         }
         .features h2 {
             font-size: 2.5rem;
